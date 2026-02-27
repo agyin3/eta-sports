@@ -77,15 +77,7 @@ const theme = createTheme({
           textTransform: 'none',
         },
       },
-      variants: [
-        {
-          props: { variant: 'contained', color: 'primary' },
-          style: {
-            background: gradients.right,
-            color: colors.pitchBlack,
-          },
-        },
-      ],
+      
     },
     MuiAppBar: {
       styleOverrides: {

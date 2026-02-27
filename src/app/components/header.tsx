@@ -16,9 +16,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const links = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about-us" },
-    { name: "Contact", href: "/contact" },
+    { name: "Home", href: "#home" },
+    { name: "Camps/Clinics", href: "#camps-clinics" },
+    { name: "About", href: "#about" },
 ];
 
 export default function Header() {
@@ -45,7 +45,21 @@ export default function Header() {
             <List>
                 {links.map((link) => (
                     <ListItem key={link.name} disablePadding>
-                        <ListItemButton component="a" href={link.href}>
+                        <ListItemButton
+                            component="a"
+                            href={link.href}
+                            onClick={(e) => {
+                                const section = document.querySelector(
+                                    link.href,
+                                );
+                                if (section) {
+                                    e.preventDefault();
+                                    section.scrollIntoView({
+                                        behavior: "smooth",
+                                    });
+                                }
+                            }}
+                        >
                             <ListItemText primary={link.name} />
                         </ListItemButton>
                     </ListItem>
@@ -65,7 +79,7 @@ export default function Header() {
                 borderBottomStyle: "solid",
             }}
         >
-            <Toolbar sx={{ maxWidth: 1200, width: "100%", mx: "auto", px: 2 }}>
+            <Toolbar disableGutters sx={{ width: "100%", px: 4.5 }}>
                 {/* Hamburger for Mobile */}
                 <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
                     <IconButton
@@ -99,9 +113,21 @@ export default function Header() {
                     {links.map((link) => (
                         <Button
                             key={link.name}
-                            href={link.href}
                             color="inherit"
                             sx={{ fontWeight: 500 }}
+                            component="a"
+                            href={link.href}
+                            onClick={(e) => {
+                                const section = document.querySelector(
+                                    link.href,
+                                );
+                                if (section) {
+                                    e.preventDefault();
+                                    section.scrollIntoView({
+                                        behavior: "smooth",
+                                    });
+                                }
+                            }}
                         >
                             {link.name}
                         </Button>

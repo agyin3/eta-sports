@@ -1,19 +1,23 @@
 "use client";
 import Box from "@mui/material/Box";
-import { List, Typography, useTheme } from "@mui/material";
+import { Button, List, Stack, Typography, useTheme } from "@mui/material";
 import Header from "./components/header";
 import BasePage from "./components/base-page";
 import Image from "next/image";
 import FullLogo from "../../public/elite-titan-athletx-full.jpg";
+import TestImage1 from "../../public/test-image-1.jpg";
+import TestImage2 from "../../public/test-image-2.jpg";
+import TestImage3 from "../../public/test-image-3.jpg";
+import TestFlyer from "../../public/test-flyer.png";
 
 export default function Home() {
     const theme = useTheme();
     return (
         <BasePage>
-            <>
+            <Box component="section" px={theme.spacing(3)} id="home">
                 {/* Mobile Logo */}
                 <Box
-                    component="section"
+                    component="div"
                     width="100%"
                     display={{ xs: "flex", md: "none" }}
                     justifyContent="center"
@@ -26,7 +30,7 @@ export default function Home() {
                 </Box>
                 {/* Desktop Logo */}
                 <Box
-                    component="section"
+                    component="div"
                     width="100%"
                     display={{ xs: "none", md: "flex" }}
                     justifyContent="center"
@@ -37,15 +41,117 @@ export default function Home() {
                         style={{ maxHeight: "724px", maxWidth: "724px" }}
                     />
                 </Box>
-            </>
-            <Box component="div">
+            </Box>
+            {/* Camps & Clinics */}
+            <Box
+                component="section"
+                marginBottom={theme.spacing(3)}
+                px={theme.spacing(3)}
+                id="camps-clinics"
+            >
+                <Typography variant="h3" align="center" gutterBottom>
+                    CAMPS & CLINICS
+                </Typography>
+                <Box
+                    display="flex"
+                    flexDirection={{ xs: "column", md: "row" }}
+                    gap={3}
+                    justifyContent="center"
+                >
+                    <Stack
+                        justifyContent="center"
+                        alignItems="center"
+                        gap={1.5}
+                    >
+                        <Box
+                            width={{ xs: "264px", md: "396px" }}
+                            height={{ xs: "352px", md: "527px" }}
+                            sx={{
+                                backgroundImage: `url(${TestFlyer.src})`,
+                                backgroundSize: "cover", // fills entire container
+                                backgroundPosition: "center", // keeps image centered
+                                backgroundRepeat: "no-repeat",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                            }}
+                        ></Box>
+                        <Typography variant="body1">
+                            AllTrenches (High School)
+                        </Typography>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={() =>
+                                window.open(
+                                    "https://forms.gle/k4PsZ2oHTpTtYweo9",
+                                    "_blank",
+                                )
+                            }
+                        >
+                            Register
+                        </Button>
+                    </Stack>
+                    <Stack
+                        justifyContent="center"
+                        alignItems="center"
+                        gap={1.5}
+                    >
+                        <Box
+                            width={{ xs: "264px", md: "396px" }}
+                            height={{ xs: "352px", md: "527px" }}
+                            sx={{
+                                backgroundImage: `url(${TestFlyer.src})`,
+                                backgroundSize: "cover", // fills entire container
+                                backgroundPosition: "center", // keeps image centered
+                                backgroundRepeat: "no-repeat",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                            }}
+                        ></Box>
+                        <Typography variant="body1">
+                            AllTrenches (Youth)
+                        </Typography>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            size="small"
+                            onClick={() =>
+                                window.open(
+                                    "https://forms.gle/k4PsZ2oHTpTtYweo9",
+                                    "_blank",
+                                )
+                            }
+                        >
+                            Register
+                        </Button>
+                    </Stack>
+                </Box>
+                {/* <Button
+                    variant="text"
+                    size="large"
+                    sx={{ margin: "auto", display: "block" }}
+                >
+                    View More
+                </Button> */}
+            </Box>
+            {/* About Section */}
+            <Box component="section" p={theme.spacing(3)} id="about">
+                <Typography variant="h3" align="center" gutterBottom>
+                    OUR PHILOSOPHY
+                </Typography>
                 <Box
                     component="div"
                     display="flex"
-                    flexDirection={{ xs: "column", md: "row" }}
+                    flexDirection={{ xs: "column-reverse", md: "row" }}
                 >
-                    <Box flex={1} padding={{ md: theme.spacing(3) }}>
-                        <Typography variant="h2">BUILD</Typography>
+                    <Box
+                        flex={1}
+                        padding={{ md: theme.spacing(3) }}
+                        marginBottom={{ xs: theme.spacing(3), md: 0 }}
+                    >
+                        <Typography variant="h4">BUILD</Typography>
                         <Typography>
                             Everything elite starts with the build.
                             <br />
@@ -74,16 +180,47 @@ export default function Home() {
                             Elite performance is constructed — not wished for.
                         </Typography>
                     </Box>
-                    <Box flex={1} padding={{ md: theme.spacing(3) }}></Box>
+                    <Box flex={1} padding={{ md: theme.spacing(3) }}>
+                        <Box
+                            width="100%"
+                            height={{ xs: "324px", md: "100%" }}
+                            sx={{
+                                backgroundImage: `url(${TestImage1.src})`,
+                                backgroundSize: "cover", // fills entire container
+                                backgroundPosition: "center", // keeps image centered
+                                backgroundRepeat: "no-repeat",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                            }}
+                            marginBottom={{ xs: theme.spacing(1.5), md: 0 }}
+                        ></Box>
+                    </Box>
                 </Box>
                 <Box
                     component="div"
                     display="flex"
                     flexDirection={{ xs: "column", md: "row" }}
+                    marginBottom={{ xs: theme.spacing(3), md: 0 }}
                 >
-                    <Box flex={1} padding={{ md: theme.spacing(3) }}></Box>
                     <Box flex={1} padding={{ md: theme.spacing(3) }}>
-                        <Typography variant="h2">BATTLE</Typography>
+                        <Box
+                            width="100%"
+                            height={{ xs: "324px", md: "100%" }}
+                            sx={{
+                                backgroundImage: `url(${TestImage2.src})`,
+                                backgroundSize: "cover", // fills entire container
+                                backgroundPosition: "center", // keeps image centered
+                                backgroundRepeat: "no-repeat",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                            }}
+                            marginBottom={{ xs: theme.spacing(1.5), md: 0 }}
+                        ></Box>
+                    </Box>
+                    <Box flex={1} padding={{ md: theme.spacing(3) }}>
+                        <Typography variant="h4">BATTLE</Typography>
                         <Typography>
                             Competition reveals character.
                             <br />
@@ -120,10 +257,11 @@ export default function Home() {
                 <Box
                     component="div"
                     display="flex"
-                    flexDirection={{ xs: "column", md: "row" }}
+                    flexDirection={{ xs: "column-reverse", md: "row" }}
+                    marginBottom={{ xs: theme.spacing(3), md: 0 }}
                 >
                     <Box flex={1} padding={{ md: theme.spacing(3) }}>
-                        <Typography variant="h2">BECOME</Typography>
+                        <Typography variant="h4">BECOME</Typography>
                         <Typography>
                             When the build is strong and the battle is embraced,
                             transformation happens.
@@ -157,7 +295,22 @@ export default function Home() {
                             They become it.
                         </Typography>
                     </Box>
-                    <Box flex={1} padding={{ md: theme.spacing(3) }}></Box>
+                    <Box flex={1} padding={{ md: theme.spacing(3) }}>
+                        <Box
+                            width="100%"
+                            height={{ xs: "324px", md: "100%" }}
+                            sx={{
+                                backgroundImage: `url(${TestImage3.src})`,
+                                backgroundSize: "cover", // fills entire container
+                                backgroundPosition: "center", // keeps image centered
+                                backgroundRepeat: "no-repeat",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                            }}
+                            marginBottom={{ xs: theme.spacing(1.5), md: 0 }}
+                        ></Box>
+                    </Box>
                 </Box>
             </Box>
         </BasePage>
