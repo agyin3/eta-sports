@@ -79,6 +79,7 @@ export default function Home() {
                             <Typography variant="body1">
                                 {camp.title}
                             </Typography>
+                            <Typography variant="body1">{camp.date}</Typography>
                             <Button
                                 variant="contained"
                                 color="primary"
