@@ -1,14 +1,13 @@
 "use client";
 import Box from "@mui/material/Box";
 import { Button, List, Stack, Typography, useTheme } from "@mui/material";
-import Header from "./components/header";
 import BasePage from "./components/base-page";
 import Image from "next/image";
 import FullLogo from "../../public/elite-titan-athletx-full.jpg";
-import TestImage1 from "../../public/test-image-1.jpg";
-import TestImage2 from "../../public/test-image-2.jpg";
-import TestImage3 from "../../public/test-image-3.jpg";
-import TestFlyer from "../../public/test-flyer.png";
+import BuildImage from "../../public/build-philosophy.jpg";
+import BattleImage from "../../public/battle-philosophy.jpg";
+import BecomeImage from "../../public/become-philosophy.jpg";
+import { campsClinicsData } from "./data/homepage";
 
 export default function Home() {
     const theme = useTheme();
@@ -58,75 +57,37 @@ export default function Home() {
                     gap={3}
                     justifyContent="center"
                 >
-                    <Stack
-                        justifyContent="center"
-                        alignItems="center"
-                        gap={1.5}
-                    >
-                        <Box
-                            width={{ xs: "264px", md: "396px" }}
-                            height={{ xs: "352px", md: "527px" }}
-                            sx={{
-                                backgroundImage: `url(${TestFlyer.src})`,
-                                backgroundSize: "cover", // fills entire container
-                                backgroundPosition: "center", // keeps image centered
-                                backgroundRepeat: "no-repeat",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                            }}
-                        ></Box>
-                        <Typography variant="body1">
-                            AllTrenches (High School)
-                        </Typography>
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            onClick={() =>
-                                window.open(
-                                    "https://forms.gle/k4PsZ2oHTpTtYweo9",
-                                    "_blank",
-                                )
-                            }
+                    {campsClinicsData.map((camp) => (
+                        <Stack
+                            justifyContent="center"
+                            alignItems="center"
+                            gap={1.5}
                         >
-                            Register
-                        </Button>
-                    </Stack>
-                    <Stack
-                        justifyContent="center"
-                        alignItems="center"
-                        gap={1.5}
-                    >
-                        <Box
-                            width={{ xs: "264px", md: "396px" }}
-                            height={{ xs: "352px", md: "527px" }}
-                            sx={{
-                                backgroundImage: `url(${TestFlyer.src})`,
-                                backgroundSize: "cover", // fills entire container
-                                backgroundPosition: "center", // keeps image centered
-                                backgroundRepeat: "no-repeat",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                            }}
-                        ></Box>
-                        <Typography variant="body1">
-                            AllTrenches (Youth)
-                        </Typography>
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            size="small"
-                            onClick={() =>
-                                window.open(
-                                    "https://forms.gle/k4PsZ2oHTpTtYweo9",
-                                    "_blank",
-                                )
-                            }
-                        >
-                            Register
-                        </Button>
-                    </Stack>
+                            <Box
+                                width={{ xs: "264px", md: "396px" }}
+                                height={{ xs: "352px", md: "527px" }}
+                                sx={{
+                                    backgroundImage: `url(${camp.imageSrc})`,
+                                    backgroundSize: "cover", // fills entire container
+                                    backgroundPosition: "center", // keeps image centered
+                                    backgroundRepeat: "no-repeat",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                }}
+                            ></Box>
+                            <Typography variant="body1">
+                                {camp.title}
+                            </Typography>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={() => window.open(camp.link, "_blank")}
+                            >
+                                Register
+                            </Button>
+                        </Stack>
+                    ))}
                 </Box>
                 {/* <Button
                     variant="text"
@@ -185,7 +146,7 @@ export default function Home() {
                             width="100%"
                             height={{ xs: "324px", md: "100%" }}
                             sx={{
-                                backgroundImage: `url(${TestImage1.src})`,
+                                backgroundImage: `url(${BuildImage.src})`,
                                 backgroundSize: "cover", // fills entire container
                                 backgroundPosition: "center", // keeps image centered
                                 backgroundRepeat: "no-repeat",
@@ -208,7 +169,7 @@ export default function Home() {
                             width="100%"
                             height={{ xs: "324px", md: "100%" }}
                             sx={{
-                                backgroundImage: `url(${TestImage2.src})`,
+                                backgroundImage: `url(${BattleImage.src})`,
                                 backgroundSize: "cover", // fills entire container
                                 backgroundPosition: "center", // keeps image centered
                                 backgroundRepeat: "no-repeat",
@@ -300,7 +261,7 @@ export default function Home() {
                             width="100%"
                             height={{ xs: "324px", md: "100%" }}
                             sx={{
-                                backgroundImage: `url(${TestImage3.src})`,
+                                backgroundImage: `url(${BecomeImage.src})`,
                                 backgroundSize: "cover", // fills entire container
                                 backgroundPosition: "center", // keeps image centered
                                 backgroundRepeat: "no-repeat",
