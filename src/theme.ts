@@ -36,7 +36,14 @@ const gradients = {
   right: `linear-gradient(90deg, ${colors.coffeeBean}, ${colors.goldenBronze}, ${colors.pitchBlack}, ${colors.mustard}, ${colors.richMahogany})`,
   bottom: `linear-gradient(180deg, ${colors.coffeeBean}, ${colors.goldenBronze}, ${colors.pitchBlack}, ${colors.mustard}, ${colors.richMahogany})`,
   left: `linear-gradient(270deg, ${colors.coffeeBean}, ${colors.goldenBronze}, ${colors.pitchBlack}, ${colors.mustard}, ${colors.richMahogany})`,
-  radial: `radial-gradient(circle, ${colors.coffeeBean} 0%, ${colors.goldenBronze} 60%, ${colors.pitchBlack} 80%) `,
+  radial: `radial-gradient(
+  circle at 50% 12%,
+  #6a3820 0%,
+  #4a1e10 20%,
+  #2a0c05 45%,
+  #140403 70%,
+  #050001 100%
+);`,
 };
 
 let theme = createTheme({
