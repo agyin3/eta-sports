@@ -2,8 +2,7 @@
 import Box from "@mui/material/Box";
 import { Button, List, Stack, Typography, useTheme } from "@mui/material";
 import BasePage from "./components/base-page";
-import Image from "next/image";
-import FullLogo from "../../public/elite-titan-athletx-full.jpg";
+import FullLogo from "../../public/elite-titan-athletx-logo-full.png";
 
 export default function Home() {
     const theme = useTheme();
