@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 // Core palette (6-digit hex for compatibility)
 const colors = {
@@ -36,10 +36,10 @@ const gradients = {
   right: `linear-gradient(90deg, ${colors.coffeeBean}, ${colors.goldenBronze}, ${colors.pitchBlack}, ${colors.mustard}, ${colors.richMahogany})`,
   bottom: `linear-gradient(180deg, ${colors.coffeeBean}, ${colors.goldenBronze}, ${colors.pitchBlack}, ${colors.mustard}, ${colors.richMahogany})`,
   left: `linear-gradient(270deg, ${colors.coffeeBean}, ${colors.goldenBronze}, ${colors.pitchBlack}, ${colors.mustard}, ${colors.richMahogany})`,
-  radial: `radial-gradient(circle, ${colors.coffeeBean}, ${colors.goldenBronze}, ${colors.pitchBlack}, ${colors.mustard}, ${colors.richMahogany})`,
+  radial: `radial-gradient(circle, ${colors.coffeeBean} 0%, ${colors.goldenBronze} 60%, ${colors.pitchBlack} 80%) `,
 };
 
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
@@ -88,5 +88,7 @@ const theme = createTheme({
     },
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 export default theme;

@@ -4,13 +4,20 @@ import { Typography, useTheme } from "@mui/material";
 import Header from "./header";
 import Footer from "./footer";
 
-export default function BasePage({ children }: { children: React.ReactNode }) {
+export default function BasePage({
+    children,
+}: {
+    children: React.ReactNode;
+    isHomepage?: boolean;
+}) {
     const theme = useTheme();
     return (
-        <Box bgcolor={theme.palette.background.default}>
+        <>
             <Header />
-            <Box>{children}</Box>
+            <Box bgcolor={theme.palette.background.default}>
+                <Box>{children}</Box>
+            </Box>
             <Footer />
-        </Box>
+        </>
     );
 }

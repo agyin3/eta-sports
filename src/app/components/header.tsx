@@ -16,9 +16,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const links = [
-    { name: "Home", href: "#home" },
-    { name: "Camps/Clinics", href: "#camps-clinics" },
-    { name: "About", href: "#about" },
+    { name: "Home", href: "/" },
+    { name: "Camps/Clinics", href: "/camps-clinics" },
+    { name: "Our Philosophy", href: "/our-philosophy" },
 ];
 
 export default function Header() {
@@ -79,7 +79,7 @@ export default function Header() {
                 borderBottomStyle: "solid",
             }}
         >
-            <Toolbar disableGutters sx={{ width: "100%", px: 4.5 }}>
+            <Toolbar disableGutters sx={{ width: "100%", px: 3 }}>
                 {/* Hamburger for Mobile */}
                 <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
                     <IconButton
@@ -97,7 +97,14 @@ export default function Header() {
                     display="flex"
                     flexGrow={1}
                     alignItems={"center"}
-                    justifyContent={{ xs: "center", md: "flex-start" }}
+                    justifyContent={{ md: "flex-start" }}
+                    mx={{ xs: "auto" }}
+                    position={{ xs: "absolute", md: "relative" }}
+                    top={{ xs: "50%", md: "0" }}
+                    left={{ xs: "50%", md: "0" }}
+                    sx={{
+                        transform: { xs: "translate(-50%, -50%)", md: "none" },
+                    }}
                 >
                     <Link href="/" passHref>
                         <Image
