@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function Home() {
     const theme = useTheme();
     return (
-        <BasePage>
+        <BasePage isHomepage>
             <Box component="section">
                 <Box
                     component="div"

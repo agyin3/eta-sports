@@ -7,6 +7,7 @@ import Texture from "../../../public/grain-texture.jpg";
 
 export default function BasePage({
     children,
+    isHomepage = false,
 }: {
     children: React.ReactNode;
     isHomepage?: boolean;
@@ -18,19 +19,23 @@ export default function BasePage({
             <Box
                 bgcolor={theme.palette.background.default}
                 zIndex={1}
-                sx={{
-                    position: "relative",
-                    "&::after": {
-                        content: '""',
-                        position: "fixed",
-                        inset: 0,
-                        backgroundImage: `url(${Texture.src})`,
-                        zIndex: -1,
-                        opacity: 0.3,
-                        pointerEvents: "none",
-                        backgroundSize: "contain",
-                    },
-                }}
+                sx={
+                    isHomepage
+                        ? {}
+                        : {
+                              position: "relative",
+                              "&::after": {
+                                  content: '""',
+                                  position: "fixed",
+                                  inset: 0,
+                                  backgroundImage: `url(${Texture.src})`,
+                                  zIndex: -1,
+                                  opacity: 0.3,
+                                  pointerEvents: "none",
+                                  backgroundSize: "contain",
+                              },
+                          }
+                }
             >
                 <Box />
                 <Box>{children}</Box>
