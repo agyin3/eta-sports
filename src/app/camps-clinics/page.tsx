@@ -26,6 +26,8 @@ export default function CampsClinicsPage() {
                     flexDirection={{ xs: "column", md: "row" }}
                     gap={3}
                     justifyContent="center"
+                    flexWrap="wrap"
+                    alignItems="center"
                 >
                     {campsClinicsData.map((camp) => (
                         <Stack
@@ -33,6 +35,7 @@ export default function CampsClinicsPage() {
                             justifyContent="center"
                             alignItems="center"
                             gap={1.5}
+                            width="45%"
                         >
                             <Box
                                 width={{ xs: "264px", md: "396px" }}
@@ -47,7 +50,11 @@ export default function CampsClinicsPage() {
                                     justifyContent: "center",
                                 }}
                             ></Box>
-                            <Typography variant="body1" align="center">
+                            <Typography
+                                variant="body1"
+                                align="center"
+                                whiteSpace="pre-wrap"
+                            >
                                 {camp.title}
                             </Typography>
                             <Typography variant="body1" align="center">
