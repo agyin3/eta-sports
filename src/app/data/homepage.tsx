@@ -12,17 +12,17 @@ interface CampClinic {
 export const campsClinicsData: CampClinic[] = [
     {
         id: 3,
-        title: "Lineman Camp & Tryouts\n(High School)",
+        title: "Lineman Camp & Tryouts\n(13u/14u/HS)",
         date: "March 27, 2026",
         imageSrc: Sp5derLinemanFlyer.src,
-        link: "https://docs.google.com/forms/d/e/1FAIpQLSftrdaAftiXRxdGFY3dMz620fibbPmiRLJ7a2ZPC4kInhFJUw/viewform?usp=pp_url&entry.567938642=High+School",
+        link: "https://forms.gle/qavBeeVF1RxvRCybA",
     },
     {
         id: 4,
-        title: "Lineman Camp & Tryouts\n(14u)",
+        title: "Lineman Camp & Tryouts\n(8u/10u/12u)",
         date: "March 27, 2026",
         imageSrc: Sp5derLinemanFlyer.src,
-        link: "https://docs.google.com/forms/d/e/1FAIpQLSftrdaAftiXRxdGFY3dMz620fibbPmiRLJ7a2ZPC4kInhFJUw/viewform?usp=pp_url&entry.567938642=14u",
+        link: "https://forms.gle/MiGxBUdK4eAnvNVv9",
     },
     {
         id: 1,
